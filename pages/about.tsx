@@ -1,7 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import Layout from '../components/layout';
 import CenteredCards from '../components/centered-card';
-import PAGES from '../lib/pages-enum';
+import { PAGES } from '../components/nav-tabs';
+
+const PhotoContainer = styled.div`
+  height: 500px;
+  width: 100%;
+  img {
+    display: block;
+    height: 500px;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center center;
+  }
+`;
 
 const About: React.FC = () => (
   <Layout activeTab={PAGES.ABOUT}>
@@ -19,6 +32,9 @@ const About: React.FC = () => (
         black and white speckled rabbit whose full name is Curious George Seurat.
       </p>
     </CenteredCards>
+    <PhotoContainer>
+      <img src={`${process.env.S3_URL}/images/Seurat.jpg`} alt="Seurat" />
+    </PhotoContainer>
   </Layout>
 );
 

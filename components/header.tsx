@@ -8,7 +8,6 @@ const StyledHeader = styled.header`
   > * {
     font-weight: 700;
     text-align: center;
-    text-shadow: -1px 0 darkgray, 0 1px darkgray, 1px 0 darkgray, 0 -1px darkgray;
   }
 `;
 

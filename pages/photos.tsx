@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Layout from '../components/layout';
-import PAGES from '../lib/pages-enum';
 import Gallery from '../components/gallery';
+import { PAGES } from '../components/nav-tabs';
+import CenteredCard from '../components/centered-card';
 
-const requestImg = require.context('../public/images/thumbnails', true, /\.jpg$/);
-const images = requestImg.keys();
+const images = process.env.PHOTO_LIST.split(',');
 
 const Masonry = styled.div`
   column-count: 1;
@@ -64,11 +64,12 @@ const Photos: React.FC = () => {
       threshold: 0,
     };
     const preloadImage = img => {
+      const newImg = img;
       const source = img.getAttribute('data-src');
       if (!source) {
         return;
       }
-      img.src = source;
+      newImg.src = source;
     };
     const observer = new IntersectionObserver((entries, self) => {
       entries.forEach(entry => {
@@ -97,10 +98,11 @@ const Photos: React.FC = () => {
   return (
     <>
       <Layout activeTab={PAGES.PHOTO}>
+        <CenteredCard>More Photos to come!</CenteredCard>
         <Masonry>
           {images.map((image, i) => (
             <MasonryItem key={image} onClick={onOpenDialog(i)}>
-              <img data-src={`/images/thumbnails/${image}`} />
+              <img data-src={`${process.env.S3_URL}/thumbnails/${image}.jpg`} alt={image} />
             </MasonryItem>
           ))}
         </Masonry>

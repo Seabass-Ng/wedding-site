@@ -1,3 +1,7 @@
 packages/**/*.js
+packages/**/*.cjs
 packages/**/*.d.ts
 node_modules
+.next/**/*
+out/**/*
+next.config.js

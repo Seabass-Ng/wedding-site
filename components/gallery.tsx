@@ -4,8 +4,7 @@ import Carousel from '@brainhubeu/react-carousel';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const requestImg = require.context('../public/images/full', true, /\.jpg$/);
-const allImages = requestImg.keys();
+const allImages = process.env.PHOTO_LIST.split(',');
 
 const GalleryContainer = styled.div`
   margin-top: 4vh;
@@ -19,7 +18,7 @@ const GalleryContainer = styled.div`
 
 interface IGallery {
   initialIndex: number;
-  onClose(): void;
+  onClose: () => void;
 }
 
 const styles = (theme: Theme) =>
@@ -38,10 +37,9 @@ const styles = (theme: Theme) =>
   });
 
 interface CloseButtonProps extends WithStyles<typeof styles> {
-  id: string;
-  children: React.ReactNode;
   onClose: () => void;
 }
+
 const CloseButton = withStyles(styles)(({ classes, onClose }: CloseButtonProps) => (
   <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
     <CloseIcon />
@@ -50,12 +48,6 @@ const CloseButton = withStyles(styles)(({ classes, onClose }: CloseButtonProps) 
 
 const Gallery: React.FC<IGallery> = ({ initialIndex, onClose }: IGallery) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  // const sliderReference = useRef();
-
-  // useEffect(() => {
-  //   sliderReference.current.slickGoTo(initialIndex);
-  // }, [sliderReference]);
-
   const onChange = value => setCurrentIndex(value);
 
   return (
@@ -64,7 +56,7 @@ const Gallery: React.FC<IGallery> = ({ initialIndex, onClose }: IGallery) => {
       <GalleryContainer>
         <Carousel arrows onChange={onChange} value={currentIndex}>
           {allImages.map(image => (
-            <img src={`/images/full/${image}`} />
+            <img src={`${process.env.S3_URL}/full/${image}.jpg`} alt={image} />
           ))}
         </Carousel>
       </GalleryContainer>

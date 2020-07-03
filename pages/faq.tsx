@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-import PAGES from '../lib/pages-enum';
+import { PAGES } from '../components/nav-tabs';
 
 const FlexCards = styled(Card)`
   ${({ ismobile }) =>

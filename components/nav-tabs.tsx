@@ -1,7 +1,14 @@
 import { Tabs, Tab, useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import Router from 'next/router';
-import PAGES from '../lib/pages-enum';
+
+export const PAGES = {
+  HOME: 'HOME',
+  ABOUT: 'ABOUT',
+  FAQ: 'FAQ',
+  PHOTO: 'PHOTO',
+  RSVP: 'RSVP',
+};
 
 const routes = {
   [PAGES.HOME]: {
@@ -28,7 +35,11 @@ const routes = {
 
 const handleChange = (ev, value) => Router.push(routes[value].url);
 
-const NavTabs = ({ activeTab }) => {
+interface INavTabs {
+  activeTab: string;
+}
+
+const NavTabs: React.FC<INavTabs> = ({ activeTab }: INavTabs) => {
   const makeTabScrollable = useMediaQuery('(max-width: 640px)'); // 640px is the size of total tab width in scrollable mode.
   return (
     <Tabs

@@ -1,10 +1,10 @@
 import { AppBar, Container } from '@material-ui/core';
 import Head from 'next/head';
+import React from 'react';
 import styled from 'styled-components';
-import Header from './header';
 import GlobalStyles from '../lib/global-styles';
+import Header from './header';
 import NavTabs from './nav-tabs';
-import PAGES from '../lib/pages-enum';
 
 const StyledContainer = styled(Container)`
   margin: 0 auto;
@@ -19,7 +19,7 @@ const StyledFooter = styled.footer`
 
 interface ILayout {
   children: React.ReactNode;
-  activeTab?: PAGES;
+  activeTab?: string;
 }
 
 const Layout: React.FC<ILayout> = ({ activeTab, children }: ILayout) => (
@@ -45,5 +45,9 @@ const Layout: React.FC<ILayout> = ({ activeTab, children }: ILayout) => (
     <StyledFooter>©{new Date().getFullYear()} Sebastian Ng</StyledFooter>
   </>
 );
+
+Layout.defaultProps = {
+  activeTab: null,
+};
 
 export default Layout;

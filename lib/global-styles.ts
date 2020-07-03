@@ -8,7 +8,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   html {
-    background: url("/images/desert_background.jpg") no-repeat center center fixed;
+    background: url("/images/santorini_background.jpg") no-repeat center center fixed;
     background-size: cover;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
@@ -58,6 +58,7 @@ export default createGlobalStyle`
     line-height: 1.15;
     margin: .5em 10px;
     padding: 10px 20px;
-    font-style: italics;
+    font-family: Helvetica;
+    font-style: italic;
   }
 `;
