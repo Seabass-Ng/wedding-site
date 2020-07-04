@@ -4,8 +4,6 @@ import Carousel from '@brainhubeu/react-carousel';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const allImages = process.env.PHOTO_LIST.split(',');
-
 const GalleryContainer = styled.div`
   margin-top: 4vh;
   img {
