@@ -1,9 +1,9 @@
 import { createStyles, Dialog, IconButton, Theme, withStyles, WithStyles } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import Carousel from '@brainhubeu/react-carousel';
-import Images from './images';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Images from './images';
 
 const GalleryContainer = styled.div`
   margin-top: 4vh;
