@@ -33,7 +33,7 @@ const About: React.FC = () => (
       </p>
     </CenteredCards>
     <PhotoContainer>
-      <img src={`${process.env.S3_URL}/images/Seurat.jpg`} alt="Seurat" />
+      <img src={`${process.env.S3_URL}/Seurat.jpg`} alt="Seurat" />
     </PhotoContainer>
   </Layout>
 );

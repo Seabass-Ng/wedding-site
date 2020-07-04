@@ -2,6 +2,7 @@ import { AppBar, Container } from '@material-ui/core';
 import Head from 'next/head';
 import React from 'react';
 import styled from 'styled-components';
+import window from 'global/window';
 import GlobalStyles from '../lib/global-styles';
 import Header from './header';
 import NavTabs from './nav-tabs';
@@ -20,6 +21,13 @@ const StyledFooter = styled.footer`
 interface ILayout {
   children: React.ReactNode;
   activeTab?: string;
+}
+
+if (process.env.NODE_ENV === 'production' && window) {
+  const httpTokens = /^http:\/\/(.*)$/.exec(window.location?.href);
+  if (httpTokens) {
+    window.location.replace(`https://${httpTokens[1]}`);
+  }
 }
 
 const Layout: React.FC<ILayout> = ({ activeTab, children }: ILayout) => (
