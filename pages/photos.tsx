@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import Gallery from '../components/gallery';
 import { PAGES } from '../components/nav-tabs';
 import CenteredCard from '../components/centered-card';
-import Images from './images';
+import Images from '../components/images';
 
 const Masonry = styled.div`
   column-count: 1;
