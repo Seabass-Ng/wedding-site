@@ -56,7 +56,7 @@ const Gallery: React.FC<IGallery> = ({ initialIndex, onClose }: IGallery) => {
       <GalleryContainer>
         <Carousel arrows onChange={onChange} value={currentIndex}>
           {allImages.map(image => (
-            <img src={`${process.env.S3_URL}/full/${image}.jpg`} alt={image} />
+            <img src={`/images/full/${image}.jpg`} alt={image} />
           ))}
         </Carousel>
       </GalleryContainer>

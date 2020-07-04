@@ -4,8 +4,7 @@ import Layout from '../components/layout';
 import Gallery from '../components/gallery';
 import { PAGES } from '../components/nav-tabs';
 import CenteredCard from '../components/centered-card';
-
-const images = process.env.PHOTO_LIST.split(',');
+import Images from './images';
 
 const Masonry = styled.div`
   column-count: 1;
@@ -100,9 +99,9 @@ const Photos: React.FC = () => {
       <Layout activeTab={PAGES.PHOTO}>
         <CenteredCard>More Photos to come!</CenteredCard>
         <Masonry>
-          {images.map((image, i) => (
+          {Images.map((image, i) => (
             <MasonryItem key={image} onClick={onOpenDialog(i)}>
-              <img data-src={`${process.env.S3_URL}/thumbnails/${image}.jpg`} alt={image} />
+              <img data-src={`/images/thumbnails/${image}.jpg`} alt={image} />
             </MasonryItem>
           ))}
         </Masonry>
