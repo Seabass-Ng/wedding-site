@@ -33,7 +33,7 @@ const Home: React.FC = () => (
       </p>
     </CenteredCards>
     <FrontPagePhoto>
-      <img src={`${process.env.S3_URL}/full/Uluru.jpg`} alt="Uluru" />
+      <img src={`/images/full/Uluru.jpg`} alt="Uluru" />
     </FrontPagePhoto>
     <CenteredCards>
       <blockquote>
