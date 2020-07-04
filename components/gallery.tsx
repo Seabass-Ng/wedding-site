@@ -54,7 +54,7 @@ const Gallery: React.FC<IGallery> = ({ initialIndex, onClose }: IGallery) => {
       <CloseButton onClose={onClose} />
       <GalleryContainer>
         <Carousel arrows onChange={onChange} value={currentIndex}>
-          {images.map(image => (
+          {Images.map(image => (
             <img src={`/images/full/${image}.jpg`} alt={image} />
           ))}
         </Carousel>
