@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import { PAGES } from '../components/nav-tabs';
 
 const FlexCards = styled(Card)`
-  ${({ ismobile }) =>
+  ${({ ismobile }: { ismobile: boolean }) =>
     ismobile
       ? `
     display: flex;

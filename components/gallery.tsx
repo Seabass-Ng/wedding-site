@@ -50,7 +50,18 @@ const Gallery: React.FC<IGallery> = ({ initialIndex, onClose }: IGallery) => {
   const onChange = value => setCurrentIndex(value);
 
   return (
-    <Dialog onClose={onClose} open maxWidth="lg" fullScreen>
+    <Dialog
+      onClose={onClose}
+      open
+      maxWidth="lg"
+      fullScreen
+      PaperProps={{
+        style: {
+          backgroundColor: 'black',
+          boxShadow: 'none',
+        },
+      }}
+    >
       <CloseButton onClose={onClose} />
       <GalleryContainer>
         <Carousel arrows onChange={onChange} value={currentIndex}>

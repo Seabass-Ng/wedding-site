@@ -16,11 +16,18 @@ const FrontPagePhoto = styled.div`
 const Home: React.FC = () => (
   <Layout activeTab={PAGES.HOME}>
     <CenteredCards>
+      <p>
+        We plan on adhering to federal, state and local guidelines for holding gatherings at the
+        time of the wedding. We ask in advance for your flexibility, understanding and grace as we
+        navigate these turbulent times together.
+      </p>
+    </CenteredCards>
+    <CenteredCards>
       <h2>The Wedding</h2>
       <p>
         Saturday, June 12th, 2021
         <br />
-        5:00 PM - 11:00 PM 
+        5:00 PM - 11:00 PM
       </p>
       <p>
         <a href="https://curiodyssey.org/">CuriOdessey Science Playground &amp; Zoo</a>
