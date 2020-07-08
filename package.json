@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "NODE_ENV=production && next start",
+    "build": "next build && next export",
+    "start": "next start",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx}",
     "lint": "eslint --fix ./**/*.{js,jsx,ts,tsx}"
   },
