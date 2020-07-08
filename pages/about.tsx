@@ -4,37 +4,66 @@ import Layout from '../components/layout';
 import CenteredCards from '../components/centered-card';
 import { PAGES } from '../components/nav-tabs';
 
-const PhotoContainer = styled.div`
-  height: 500px;
-  width: 100%;
+const AboutUsFlex = styled.div`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
+  @media screen and (min-width: 768px) {
+    h2 {
+      margin: 1em 0;
+    }
+    p {
+      margin: 1em 0;
+    }
+  }
+
+  .text {
+    flex-grow: 1;
+    p {
+      text-align: left;
+    }
+  }
+
   img {
     display: block;
-    height: 500px;
-    margin: 0 auto;
+    height: 300px;
     object-fit: contain;
     object-position: center center;
+    @media screen and (min-width: 768px) {
+      margin-right: 20px;
+    }
   }
 `;
 
 const About: React.FC = () => (
   <Layout activeTab={PAGES.ABOUT}>
-    <h1>About</h1>
     <CenteredCards>
-      <h2>How We Met</h2>
-      <p>
-        We met at a mutual friend’s dinner birthday party of Korean food and soju in a watermelon
-        (Hi Heather!). We continued corresponding through Alanna’s New Zealand trip, and to
-        Sebastian’s surprise, Alanna actually accepted his invitation of seeing an advanced
-        screening <i>Mad Max: Fury Road</i> the day after she landed in San Francisco.
-      </p>
-      <p>
-        Since then, we’ve traveled together both domestically and internationally and adopted a
-        black and white speckled rabbit whose full name is Curious George Seurat.
-      </p>
+      <AboutUsFlex>
+        <img src="/images/Seurat.jpg" alt="Seurat" />
+        <div className="text">
+          <h2>About Us</h2>
+          <p>
+            We met at a mutual friend’s dinner birthday party of Korean food and soju in a
+            watermelon (Hi Heather!). We continued corresponding through Alanna&apos;s New Zealand
+            trip, and to Sebastian’s surprise, Alanna actually accepted his invitation of seeing an
+            advanced screening <i>Mad Max: Fury Road</i> the day after she landed in San Francisco.
+            Our first real date involved ramen and the monsters known as kaiju.
+          </p>
+          <p>
+            Since then, we&apos;ve traveled together both domestically and internationally.
+            Sebastian takes the pictures of food. Alanna just makes grouchy faces until he&apos;s
+            done. One of his favorite travel memories is seeing the Sydney zoo, Taronga, lit up with
+            giant glowing creatures for the annual winter event, Vivid. One of her favorite travel
+            memories is teaching Sebastian that the best pictures are the ones where you act like or
+            interact with the art. They have also adopted an adorably mischevious black and white
+            speckled rabbit whose full name is Curious George Seurat.
+          </p>
+        </div>
+      </AboutUsFlex>
     </CenteredCards>
-    <PhotoContainer>
-      <img src="/images/Seurat.jpg" alt="Seurat" />
-    </PhotoContainer>
   </Layout>
 );
 

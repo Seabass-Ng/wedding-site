@@ -20,9 +20,7 @@ const Home: React.FC = () => (
       <p>
         Saturday, June 12th, 2021
         <br />
-        5:00 PM - 11:00 PM
-        <br />
-        Attire: Semi-formal
+        5:00 PM - 11:00 PM 
       </p>
       <p>
         <a href="https://curiodyssey.org/">CuriOdessey Science Playground &amp; Zoo</a>
@@ -33,7 +31,7 @@ const Home: React.FC = () => (
       </p>
     </CenteredCards>
     <FrontPagePhoto>
-      <img src={`/images/full/Uluru.jpg`} alt="Uluru" />
+      <img src="/images/full/Uluru.jpg" alt="Uluru" />
     </FrontPagePhoto>
     <CenteredCards>
       <blockquote>
