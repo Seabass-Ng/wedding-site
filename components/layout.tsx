@@ -41,6 +41,7 @@ const Layout: React.FC<ILayout> = ({ activeTab, children }: ILayout) => (
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Norican:400&display=swap"
       />
+      <meta name="robots" content="noindex" />
     </Head>
     <GlobalStyles />
     <StyledContainer>
@@ -50,7 +51,11 @@ const Layout: React.FC<ILayout> = ({ activeTab, children }: ILayout) => (
       </AppBar>
       <main>{children}</main>
     </StyledContainer>
-    <StyledFooter>©{new Date().getFullYear()} Sebastian Ng</StyledFooter>
+    <StyledFooter>
+      ©{new Date().getFullYear()} <a href="https://github.com/seabass-ng">Sebastian Ng</a> &mdash;
+      Background Image from{' '}
+      <a href="https://pixabay.com/users/mariamichelle-165491/">Michelle Maria</a>
+    </StyledFooter>
   </>
 );
 
