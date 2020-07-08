@@ -49,7 +49,7 @@ const About: React.FC = () => (
             We met at a mutual friend’s dinner birthday party of Korean food and soju in a
             watermelon (Hi Heather!). We continued corresponding through Alanna&apos;s New Zealand
             trip, and to Sebastian’s surprise, Alanna actually accepted his invitation of seeing an
-            advanced screening <i>Mad Max: Fury Road</i> the day after she landed in San Francisco.
+            advanced screening of <i>Mad Max: Fury Road</i> the day after she landed in San Francisco.
             Our first real date involved ramen and the monsters known as kaiju.
           </p>
           <p>
