@@ -28,6 +28,8 @@ const Home: React.FC = () => (
         Saturday, June 12th, 2021
         <br />
         5:00 PM - 11:00 PM
+        <br />
+        Unplugged, self-uniting ceremony, followed by drinks, feasting and dancing
       </p>
       <p>
         <a href="https://curiodyssey.org/">CuriOdessey Science Playground &amp; Zoo</a>

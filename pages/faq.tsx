@@ -43,23 +43,15 @@ const FAQ: React.FC = () => {
     <Layout activeTab={PAGES.FAQ}>
       <QACard isMobile={isMobile} question="How to get here">
         <p>
-          <b>From SFO</b>:
-        </p>
-        <p>
-          <b>From San Francisco</b>:
-        </p>
-        <p>
-          <b>From East Bay</b>:
-        </p>
-        <p>
-          <b>From South Bay</b>:
+          CuriOdyssey is located within the picturesque Coyote Point Recreational Area in San Mateo,
+          CA. The closest airport is SFO - a mere 10 minute drive.
         </p>
       </QACard>
 
       <QACard isMobile={isMobile} question="Parking">
         <p>
           There is plenty of parking in front of CuriOdyssey. If those fill up, there is plenty of
-          parking around Coyote Point.
+          parking around Coyote Point Recreational Area.
         </p>
         <p>Parking passes will be included with the invitation.</p>
         <p>
@@ -67,8 +59,16 @@ const FAQ: React.FC = () => {
         </p>
       </QACard>
 
+      <QACard isMobile={isMobile} question="Accomodations">
+        <p>
+          We do not have rooms blocked at any particular hotel. There are many accommodation options
+          at a variety of price points in the area. The closest accommodations to Coyote Point
+          Recreation Area is along Airport Blvd.
+        </p>
+      </QACard>
+
       <QACard isMobile={isMobile} question="Are We Allowed to Smoke/Vape?">
-        <p>Please do not smoke or vape at CuriOdyssey and Coyote Point Recreation.</p>
+        <p>Please do not smoke or vape at CuriOdyssey and Coyote Point Recreational Area.</p>
         <div>
           Quote from the venue contract:
           <blockquote>
@@ -91,7 +91,7 @@ const FAQ: React.FC = () => {
       </QACard>
       <QACard isMobile={isMobile} question="Will there be alcohol? Should we bring some cash?">
         Yes, there will be alcohol. Please drink responsibly - don’t make us worry about your
-        livers.
+        livers. You do not need to bring cash for the alcohol.
       </QACard>
       <QACard isMobile={isMobile} question="Should we bring our children?">
         We encourage all parents to take this as an opportunity for a night out without your
