@@ -10,6 +10,7 @@ export default createGlobalStyle`
   html {
     background: url("/images/santorini_background.jpg") no-repeat center center fixed;
     background-size: cover;
+    -webkit-background-size: cover;
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
