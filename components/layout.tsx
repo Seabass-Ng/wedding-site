@@ -1,6 +1,6 @@
 import { AppBar, Container } from '@material-ui/core';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import GlobalStyles from '../lib/global-styles';
 import Header from './header';
