@@ -54,12 +54,12 @@ const About: React.FC = () => (
           </p>
           <p>
             Since then, we&apos;ve traveled together both domestically and internationally.
-            Sebastian takes the pictures of food. Alanna just makes grouchy faces until he&apos;s
+            Sebastian takes the pictures of food, while Alanna makes grouchy faces until he&apos;s
             done. One of his favorite travel memories is seeing the Sydney zoo, Taronga, lit up with
             giant glowing creatures for the annual winter event, Vivid. One of her favorite travel
-            memories is teaching Sebastian that the best pictures are the ones where you act like or
-            interact with the art. They have also adopted an adorably mischevious black and white
-            speckled rabbit whose full name is Curious George Seurat.
+            memories is eating at two Michelin star hawker stalls in Singapore. They have also
+            adopted an adorably mischevious black and white speckled rabbit whose full name is
+            Curious George Seurat.
           </p>
         </div>
       </AboutUsFlex>
