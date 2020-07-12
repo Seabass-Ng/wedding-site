@@ -17,6 +17,9 @@ export default createGlobalStyle`
     line-height: 1.15;
     padding: 0;
     -webkit-text-size-adjust: 100%;
+    @media screen and (max-width: 767px) {
+      background: url("/images/santorini_background_mobile.jpg") no-repeat center center fixed;
+    }
   }
   body,
   h2,

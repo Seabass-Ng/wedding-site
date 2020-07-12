@@ -1,9 +1,10 @@
-import { Card, CardContent, useMediaQuery } from '@material-ui/core';
+import { Card, CardContent } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import { PAGES } from '../components/nav-tabs';
+import isMobile from '../lib/isMobile';
 
 const FlexCards = styled(Card)`
   ${({ ismobile }: { ismobile: boolean }) =>
@@ -24,12 +25,12 @@ const FlexCards = styled(Card)`
 
 interface IQACard {
   children: React.ReactNode;
-  isMobile: boolean;
+  showMobile: boolean;
   question: string;
 }
 
-const QACard: React.FC<IQACard> = ({ children, isMobile, question }: IQACard) => (
-  <FlexCards ismobile={isMobile}>
+const QACard: React.FC<IQACard> = ({ children, showMobile, question }: IQACard) => (
+  <FlexCards ismobile={showMobile}>
     <CardContent>
       <h2>{question}</h2>
     </CardContent>
@@ -38,10 +39,10 @@ const QACard: React.FC<IQACard> = ({ children, isMobile, question }: IQACard) =>
 );
 
 const FAQ: React.FC = () => {
-  const isMobile = useMediaQuery('(max-width: 768px');
+  const showMobile = isMobile();
   return (
     <Layout activeTab={PAGES.FAQ}>
-      <QACard isMobile={isMobile} question="Where is CuriOdyssey?">
+      <QACard showMobile={showMobile} question="Where is CuriOdyssey?">
         <p>
           CuriOdyssey is located within the picturesque Coyote Point Recreational Area in San Mateo,
           CA. The closest airport is SFO - a mere 10 minute drive. Once you past the gate, the
@@ -53,7 +54,7 @@ const FAQ: React.FC = () => {
         </p>
       </QACard>
 
-      <QACard isMobile={isMobile} question="Parking">
+      <QACard showMobile={showMobile} question="Parking">
         <p>
           There is plenty of parking in front of CuriOdyssey. If those fill up, there is plenty of
           parking around Coyote Point Recreational Area.
@@ -64,7 +65,7 @@ const FAQ: React.FC = () => {
         </p>
       </QACard>
 
-      <QACard isMobile={isMobile} question="Accomodations">
+      <QACard showMobile={showMobile} question="Accomodations">
         <p>
           We do not have rooms blocked at any particular hotel. There are many accommodation options
           at a variety of price points in the area. The closest accommodations to Coyote Point
@@ -72,7 +73,7 @@ const FAQ: React.FC = () => {
         </p>
       </QACard>
 
-      <QACard isMobile={isMobile} question="Are We Allowed to Smoke/Vape?">
+      <QACard showMobile={showMobile} question="Are We Allowed to Smoke/Vape?">
         <p>Please do not smoke or vape at CuriOdyssey and Coyote Point Recreational Area.</p>
         <div>
           Quote from the venue contract:
@@ -88,27 +89,27 @@ const FAQ: React.FC = () => {
       </QACard>
 
       <QACard
-        isMobile={isMobile}
+        showMobile={showMobile}
         question="Are you registered somewhere? What gifts should we bring?"
       >
         Your presence is the present. If you want to celebrate us with a gift, we would appreciate a
         monetary contribution to our honeymoon fund or our house fund.
       </QACard>
-      <QACard isMobile={isMobile} question="Will there be alcohol? Should we bring some cash?">
+      <QACard showMobile={showMobile} question="Will there be alcohol? Should we bring some cash?">
         Yes, there will be alcohol. Please drink responsibly - don’t make us worry about your
         livers. You do not need to bring cash for the alcohol.
       </QACard>
-      <QACard isMobile={isMobile} question="Should we bring our children?">
+      <QACard showMobile={showMobile} question="Should we bring our children?">
         We encourage all parents to take this as an opportunity for a night out without your
         children, but you can definitely bring them along if you want.
       </QACard>
-      <QACard isMobile={isMobile} question="What does an unplugged ceremony mean?">
+      <QACard showMobile={showMobile} question="What does an unplugged ceremony mean?">
         We would love for you to be fully present, physically and mentally during our ceremony. That
         means resisting the urge to look at your phone, other device or take pictures. We’ve hired
         professionals to handle the pictures - and they will be distributed to you. We want to see
         your smiling faces - not the top of your heads or the backs of your phones.
       </QACard>
-      <QACard isMobile={isMobile} question="What should we wear?">
+      <QACard showMobile={showMobile} question="What should we wear?">
         Semi-formal, but ready to dance. Bring a jacket in case the fog rolls in.
       </QACard>
     </Layout>
