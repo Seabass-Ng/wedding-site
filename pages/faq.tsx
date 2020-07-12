@@ -44,7 +44,12 @@ const FAQ: React.FC = () => {
       <QACard isMobile={isMobile} question="Where is CuriOdyssey?">
         <p>
           CuriOdyssey is located within the picturesque Coyote Point Recreational Area in San Mateo,
-          CA. The closest airport is SFO - a mere 10 minute drive.
+          CA. The closest airport is SFO - a mere 10 minute drive. Once you past the gate, the
+          parking lot for CuriOdyssey will be on the second left. There will be a giant sign saying
+          CuriOdyssey before the turn.
+        </p>
+        <p>
+          <a href="https://goo.gl/maps/mcMHfMgNwuhGfnbe8">Google Maps Link from SFO.</a>
         </p>
       </QACard>
 
