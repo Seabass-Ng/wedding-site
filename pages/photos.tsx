@@ -96,6 +96,11 @@ const Photos: React.FC = () => {
   };
   return (
     <>
+      <head>
+        {Images.map(image => (
+          <link key={image} rel="preload" href={`/images/full/${image}.jpg`} as="image" />
+        ))}
+      </head>
       <Layout activeTab={PAGES.PHOTO}>
         <CenteredCard>More Photos to come!</CenteredCard>
         <Masonry>

@@ -1,6 +1,7 @@
-import { Tabs, Tab, useMediaQuery } from '@material-ui/core';
+import { Tabs, Tab } from '@material-ui/core';
 import React from 'react';
 import Router from 'next/router';
+import { getViewportWidth } from '../lib/isMobile';
 
 export const PAGES = {
   HOME: 'HOME',
@@ -40,7 +41,7 @@ interface INavTabs {
 }
 
 const NavTabs: React.FC<INavTabs> = ({ activeTab }: INavTabs) => {
-  const makeTabScrollable = useMediaQuery('(max-width: 640px)'); // 640px is the size of total tab width in scrollable mode.
+  const makeTabScrollable = getViewportWidth() < 640; // 640px is the size of total tab width in scrollable mode.
   return (
     <Tabs
       variant={makeTabScrollable ? 'scrollable' : 'fullWidth'}
