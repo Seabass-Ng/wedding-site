@@ -39,10 +39,10 @@ const FAQ: React.FC = () => (
     <QACard question="Where is CuriOdyssey?">
       <p>
         CuriOdyssey is located within the picturesque Coyote Point Recreational Area in San Mateo,
-        CA. The closest airport is SFO - a mere 10 minute drive. Once you past the gate, the parking
-        lot for CuriOdyssey will be on the second left. There will be a giant sign saying
-        CuriOdyssey before the turn.
+        CA. Once you past the gate, the parking lot for CuriOdyssey will be on the second left.
+        There will be a giant sign saying CuriOdyssey before the turn.
       </p>
+      <p>The closest airport is SFO - a mere 10 minute drive.</p>
       <p>
         <a href="https://goo.gl/maps/mcMHfMgNwuhGfnbe8">Google Maps Link from SFO.</a>
       </p>
@@ -89,10 +89,6 @@ const FAQ: React.FC = () => (
     <QACard question="Will there be alcohol? Should we bring some cash?">
       Yes, there will be alcohol. Please drink responsibly - don’t make us worry about your livers.
       You do not need to bring cash for the alcohol.
-    </QACard>
-    <QACard question="Should we bring our children?">
-      We encourage all parents to take this as an opportunity for a night out without your children,
-      but you can definitely bring them along if you want.
     </QACard>
     <QACard question="What does an unplugged ceremony mean?">
       We would love for you to be fully present, physically and mentally during our ceremony. That
