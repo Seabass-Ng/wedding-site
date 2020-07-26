@@ -66,7 +66,11 @@ const Gallery: React.FC<IGallery> = ({ initialIndex, onClose }: IGallery) => {
       <GalleryContainer>
         <Carousel arrows onChange={onChange} value={currentIndex}>
           {Images.map(image => (
-            <img src={`/images/full/${image}.jpg`} alt={image} key={image} />
+            <img
+              src={`${process.env.FIREBASE_HOST}/images/full/${image}.jpg`}
+              alt={image}
+              key={image}
+            />
           ))}
         </Carousel>
       </GalleryContainer>

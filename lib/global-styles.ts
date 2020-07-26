@@ -8,7 +8,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   html {
-    background: url("/images/santorini_background.jpg") no-repeat center center fixed;
+    background: url(${`${process.env.FIREBASE_HOST}/images/santorini_background.jpg`}) no-repeat center center fixed;
     background-size: cover;
     -webkit-background-size: cover;
     scroll-behavior: smooth;
@@ -19,7 +19,7 @@ export default createGlobalStyle`
     padding: 0;
     -webkit-text-size-adjust: 100%;
     @media screen and (max-width: 767px) {
-      background: url("/images/santorini_background_mobile.jpg") no-repeat center center fixed;
+      background: url(${`${process.env.FIREBASE_HOST}/images/santorini_background_mobile.jpg`}) no-repeat center center fixed;
     }
     @supports (-webkit-touch-callout: none) {
       background-repeat: repeat;

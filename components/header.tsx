@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   > * {

@@ -42,7 +42,7 @@ const About: React.FC = () => (
   <Layout activeTab={PAGES.ABOUT}>
     <CenteredCards>
       <AboutUsFlex>
-        <img src="/images/Seurat.jpg" alt="Seurat" />
+        <img src={`${process.env.FIREBASE_HOST}/images/Seurat.jpg`} alt="Seurat" />
         <div className="text">
           <h2>About Us</h2>
           <p>
