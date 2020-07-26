@@ -1,9 +1,11 @@
 import firebase from 'firebase-admin';
 import serviceAccount from '../firebase-secret.json';
 
+const firebaseServiceAccount = serviceAccount as firebase.ServiceAccount;
+
 try {
   firebase.initializeApp({
-    credential: firebase.credential.cert(serviceAccount),
+    credential: firebase.credential.cert(firebaseServiceAccount),
     databaseURL: 'https://sebastian-alanna-wedding.firebaseio.com',
   });
 } catch (error) {

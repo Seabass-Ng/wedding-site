@@ -26,3 +26,5 @@ env-config.js
 public/images/**
 env-config.js
 firebase-secret.json
+
+.vercel

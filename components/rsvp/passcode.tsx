@@ -3,9 +3,12 @@ import { Alert } from '@material-ui/lab';
 import React, { useState } from 'react';
 import FormFooter from './form-footer';
 
+interface INextClick {
+  (code: string, lastName: string): void;
+}
 interface IPasscode {
   error: string;
-  onNextClick(string, string): void;
+  onNextClick: INextClick;
 }
 
 const RSVP_PASSCODE: React.FC<IPasscode> = ({ error, onNextClick }) => {
