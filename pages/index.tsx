@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         </p>
       </CenteredCards>
       <FrontPagePhoto>
-        <img src="/images/full/Uluru.jpg" alt="Uluru" />
+        <img src={`${process.env.FIREBASE_HOST}/images/full/Uluru.jpg`} alt="Uluru" />
       </FrontPagePhoto>
       <CenteredCards>
         <blockquote>

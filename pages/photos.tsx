@@ -49,7 +49,6 @@ const MasonryItem = styled.div`
     margin: 0;
     width: 100%;
     min-height: 160px;
-    vertical-align: middle;
   }
 `;
 
@@ -98,7 +97,12 @@ const Photos: React.FC = () => {
     <>
       <head>
         {Images.map(image => (
-          <link key={image} rel="preload" href={`/images/full/${image}.jpg`} as="image" />
+          <link
+            key={image}
+            rel="preload"
+            href={`${process.env.FIREBASE_HOST}/images/full/${image}.jpg`}
+            as="image"
+          />
         ))}
       </head>
       <Layout activeTab={PAGES.PHOTO}>
@@ -106,7 +110,10 @@ const Photos: React.FC = () => {
         <Masonry>
           {Images.map((image, i) => (
             <MasonryItem key={image} onClick={onOpenDialog(i)}>
-              <img data-src={`/images/thumbnails/${image}.jpg`} alt={image} />
+              <img
+                data-src={`${process.env.FIREBASE_HOST}/images/thumbnails/${image}.jpg`}
+                alt={image}
+              />
             </MasonryItem>
           ))}
         </Masonry>
