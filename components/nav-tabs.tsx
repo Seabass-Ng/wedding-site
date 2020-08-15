@@ -35,15 +35,12 @@ const routes = {
 
 interface INavTabs {
   activeTab: string;
+  scrollable: boolean;
 }
 
 const NavTabs: React.FC<INavTabs> = memo(
-  ({ activeTab }: INavTabs) => {
-    const [scrollable, setScrollable] = useState(false);
+  ({ activeTab, scrollable }: INavTabs) => {
     const router = useRouter();
-    useEffect(() => {
-      setScrollable(window.innerWidth < 640);
-    }, []);
     const handleChange = (ev, value) => router.push(routes[value].url);
     return (
       <Tabs
@@ -59,7 +56,8 @@ const NavTabs: React.FC<INavTabs> = memo(
       </Tabs>
     );
   },
-  (prevProps, nextProps) => prevProps.activeTab === nextProps.activeTab,
+  (prevProps, nextProps) =>
+    prevProps.activeTab === nextProps.activeTab && prevProps.scrollable === nextProps.scrollable,
 );
 
 export default NavTabs;
