@@ -39,6 +39,20 @@ interface ILayout {
   withinPage?: boolean;
 }
 
+const MobileAppBar = styled.div`
+  width: 100%;
+  @media (min-width: 641px) {
+    display: none;
+  }
+`;
+
+const DesktopAppBar = styled.div`
+  width: 100%;
+  @media (max-width: 640px) {
+    display: none;
+  }
+`;
+
 const Layout: React.FC<ILayout> = ({ activeTab, children, withinPage }: ILayout) => (
   <>
     <Head key="layout">
@@ -55,9 +69,16 @@ const Layout: React.FC<ILayout> = ({ activeTab, children, withinPage }: ILayout)
     <GlobalStyles />
     <StyledContainer $withinPage={withinPage}>
       <Header />
-      <AppBar position="sticky">
-        <NavTabs activeTab={activeTab} />
-      </AppBar>
+      <MobileAppBar>
+        <AppBar position="sticky">
+          <NavTabs activeTab={activeTab} scrollable />
+        </AppBar>
+      </MobileAppBar>
+      <DesktopAppBar>
+        <AppBar position="sticky">
+          <NavTabs activeTab={activeTab} scrollable={false} />
+        </AppBar>
+      </DesktopAppBar>
       <main>{children}</main>
       <StyledFooter>
         ©{new Date().getFullYear()} <a href="https://github.com/seabass-ng">Sebastian Ng</a> &mdash;

@@ -25,7 +25,7 @@ const Header: React.FC = memo(() => {
       <p>
         June 12<sup>th</sup>, 2021 - San Mateo, CA
       </p>
-      <p>{moment('20210612', 'YYYYMMDD').to([today.year(), today.month(), today.day()])}</p>
+      <p>{moment('20210612', 'YYYYMMDD').from([today.year(), today.month(), today.day()])}</p>
     </StyledHeader>
   );
 });
