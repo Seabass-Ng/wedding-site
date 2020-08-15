@@ -1,6 +1,6 @@
-import { Tabs, Tab, useMediaQuery } from '@material-ui/core';
-import React from 'react';
-import Router from 'next/router';
+import { Tabs, Tab } from '@material-ui/core';
+import React, { memo, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 export const PAGES = {
   HOME: 'HOME',
@@ -33,33 +33,33 @@ const routes = {
   },
 };
 
-const handleChange = (ev, value) => Router.push(routes[value].url);
-
 interface INavTabs {
   activeTab: string;
 }
 
-const NavTabs: React.FC<INavTabs> = ({ activeTab }: INavTabs) => {
-  const makeTabScrollable = useMediaQuery('max-width: 640px'); // 640px is the size of total tab width in scrollable mode.
-  return (
-    <Tabs
-      variant={makeTabScrollable ? 'scrollable' : 'fullWidth'}
-      scrollButtons="auto"
-      aria-label="nav tabs"
-      onChange={handleChange}
-      value={activeTab}
-    >
-      {Object.keys(routes).map(value => (
-        <Tab
-          component="a"
-          href={routes[value].url}
-          label={routes[value].label}
-          value={value}
-          key={value}
-        />
-      ))}
-    </Tabs>
-  );
-};
+const NavTabs: React.FC<INavTabs> = memo(
+  ({ activeTab }: INavTabs) => {
+    const [scrollable, setScrollable] = useState(false);
+    const router = useRouter();
+    useEffect(() => {
+      setScrollable(window.innerWidth < 640);
+    }, []);
+    const handleChange = (ev, value) => router.push(routes[value].url);
+    return (
+      <Tabs
+        variant={scrollable ? 'scrollable' : 'fullWidth'}
+        scrollButtons="auto"
+        aria-label="nav tabs"
+        onChange={handleChange}
+        value={activeTab}
+      >
+        {Object.keys(routes).map(value => (
+          <Tab label={routes[value].label} value={value} key={value} />
+        ))}
+      </Tabs>
+    );
+  },
+  (prevProps, nextProps) => prevProps.activeTab === nextProps.activeTab,
+);
 
 export default NavTabs;
