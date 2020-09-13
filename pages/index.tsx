@@ -26,7 +26,7 @@ const Home: React.FC = () => {
       <CenteredCards>
         <h2>The Wedding</h2>
         <p>
-          Saturday, June 12th, 2021
+          Saturday, October 30th, 2021
           <br />
           5:30 PM - 11:00 PM (Doors open at 5pm tentative)
           <br />

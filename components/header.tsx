@@ -23,9 +23,9 @@ const Header: React.FC = memo(() => {
     <StyledHeader>
       <StyledH1>Alanna Wong and Sebastian Ng</StyledH1>
       <p>
-        June 12<sup>th</sup>, 2021 - San Mateo, CA
+        October 30<sup>th</sup>, 2021 - San Mateo, CA
       </p>
-      <p>{moment('20210612', 'YYYYMMDD').from([today.year(), today.month(), today.day()])}</p>
+      <p>{moment('20211030', 'YYYYMMDD').from([today.year(), today.month(), today.date()])}</p>
     </StyledHeader>
   );
 });
