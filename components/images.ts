@@ -21,4 +21,10 @@ export default [
   'Uluru',
   'Uluru2',
   'Warriors',
+  'Engage5',
+  'Engage8',
+  'Engage10',
+  'Engage13',
+  'Engage15',
+  'Engage18',
 ];

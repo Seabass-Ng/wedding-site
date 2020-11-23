@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
-import moment from 'moment';
+import { formatDistanceToNow } from 'date-fns';
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -18,14 +18,13 @@ const StyledH1 = styled.h1`
 `;
 
 const Header: React.FC = memo(() => {
-  const today = moment();
   return (
     <StyledHeader>
       <StyledH1>Alanna Wong and Sebastian Ng</StyledH1>
       <p>
         October 30<sup>th</sup>, 2021 - San Mateo, CA
       </p>
-      <p>{moment('20211030', 'YYYYMMDD').from([today.year(), today.month(), today.date()])}</p>
+      <p>{formatDistanceToNow(new Date(2021, 9, 30))}</p>
     </StyledHeader>
   );
 });
