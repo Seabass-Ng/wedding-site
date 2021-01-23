@@ -83,7 +83,7 @@ const Layout: React.FC<ILayout> = ({ activeTab, children, withinPage }: ILayout)
       <StyledFooter>
         ©{new Date().getFullYear()} <a href="https://github.com/seabass-ng">Sebastian Ng</a> &mdash;
         Background Image from{' '}
-        <a href="https://pixabay.com/users/mariamichelle-165491/">Michelle Maria</a>
+        <a href="https://pixabay.com/users/giani-1202/">Giani Pralea</a>
       </StyledFooter>
     </StyledContainer>
   </>
